@@ -4,4 +4,11 @@ module github.com/yangshun2005/gonormalCode
 
 go 1.18
 
-require github.com/yangshun2005/gonormalCode v0.0.0-20230307040435-d0106b9e7f5b // indirect
+require github.com/stretchr/testify v1.8.2
+
+require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/stretchr/objx v0.5.0 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
+)

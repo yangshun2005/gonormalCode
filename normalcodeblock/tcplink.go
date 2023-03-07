@@ -13,11 +13,12 @@ func TcpLink(tcpData string, ipaddr string) (str string) {
 	}
 	defer conn.Close()
 	// tcpData := "hi"
-	str := Client(conn, tcpData)
-	return str
+	sms := tcpData
+	str3 := Client(conn, sms)
+	return str3
 }
 
-func Client(conn net.Conn, sms string) string {
+func Client(conn net.Conn, sms string) (str2 string) {
 	fmt.Println("want to send message:" + sms)
 	conn.Write([]byte(sms))
 	buf := make([]byte, 2)
