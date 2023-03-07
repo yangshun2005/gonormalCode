@@ -1,17 +1,22 @@
-package main
+package normalcodeblock
 
 import (
 	"strings"
+	"unicode"
 )
 
-func main() {
+func CodeSplic(s string) []string {
 	//GOTO
-	strings.FieldsFunc(TOPIC["data"], CodeSplit)
+	// s := "We are humans. We are social animals."
+	return strings.FieldsFunc(s, codeFunc)
+
 }
 
-func CodeSplit(s rune) bool {
-	if s == ',' {
-		return true
-	}
-	return false
+func codeFunc(s rune) bool {
+	// if s == ',' {
+	// 	return true
+	// }
+	// return false
+
+	return unicode.IsSpace(s) || s == '.'
 }
