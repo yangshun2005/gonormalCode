@@ -1,0 +1,5 @@
+package gothpkg
+
+func GothPkg() {
+
+}

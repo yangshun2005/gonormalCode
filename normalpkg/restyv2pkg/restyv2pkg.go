@@ -1,0 +1,33 @@
+package restyv2pkg
+
+import (
+	"fmt"
+	"log"
+
+	"github.com/go-resty/resty/v2"
+)
+
+func Restyv2pkg(url string) {
+	client := resty.New()
+	resp, err := client.R().Get(url)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Response Info:")
+	fmt.Println("Status Code:", resp.StatusCode())
+	fmt.Println("Status:", resp.Status())
+	fmt.Println("Proto:", resp.Proto())
+	fmt.Println("Time:", resp.Time())
+	fmt.Println("Received At:", resp.ReceivedAt())
+	fmt.Println("Size:", resp.Size())
+	fmt.Println("Headers:")
+	for key, value := range resp.Header() {
+		fmt.Println(key, "=", value)
+	}
+	fmt.Println("Cookies:")
+	for i, cookie := range resp.Cookies() {
+		fmt.Printf("cookie%d: name:%s value:%s\n", i, cookie.Name, cookie.Value)
+	}
+}
